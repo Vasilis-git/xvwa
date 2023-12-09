@@ -19,6 +19,7 @@
     </div>
 </div>
 <?php
+$FAILED_TO_USE_DATABASE = "<li class=\"cross\">Failed to use/select database. Check the configuration file.";
 include('../config.php');
 function cleanup($conn,$XVWA_WEBROOT){
     // clean the database
@@ -58,7 +59,7 @@ $submit = isset($_GET['action']) ? $_GET['action'] : '';
                     echo "<li class=\"cross\">Can not create table comment. Try submit/reset again. </li>"; 
                 }
             }else{            
-                echo "<li class=\"cross\">Failed to use/select database. Check the configuration file.".mysql_error()."</li>";
+                echo $FAILED_TO_USE_DATABASE.mysql_error()."</li>";
             }
 
             //creating product_caffe table
@@ -80,7 +81,7 @@ $submit = isset($_GET['action']) ? $_GET['action'] : '';
                     echo "<li class=\"cross\">Can not create table products. Try submit/reset again.".mysql_error()." </li>"; 
                 }
             }else{            
-                echo "<li class=\"cross\">Failed to use/select database. Check the configuration file.".mysql_error()."</li>";
+                echo $FAILED_TO_USE_DATABASE.mysql_error()."</li>";
             }
             //creating user table
             $table_user=$conn->query("CREATE table users(uid int not null primary key auto_increment, username varchar(20),password varchar(50))");
@@ -97,7 +98,7 @@ $submit = isset($_GET['action']) ? $_GET['action'] : '';
                     echo "<li class=\"cross\">Can not create table users. Try submit/reset again.".mysql_error()." </li>"; 
                 }
             }else{
-                echo "<li class=\"cross\">Failed to use/select database. Check the configuration file.".mysql_error()."</li>";   
+                echo $FAILED_TO_USE_DATABASE.mysql_error()."</li>";   
             }
 
             
