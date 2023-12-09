@@ -32,7 +32,7 @@
             <?php
             if (isset($_REQUEST['target'])) {
                 $target = $_REQUEST['target'];
-                if($target){
+                if($target && filter_var($target, FILTER_VALIDATE_IP)){//only run if $target is a valid ip
                     if (stristr(php_uname('s'), 'Windows NT')) { 
             
                     $cmd = shell_exec( 'ping  ' . $target );
