@@ -7,7 +7,9 @@ $xpath = new DOMXPath($doc);
 $input = $_POST['search'];
 $query = "/Coffees/Coffee[@ID='".$input."']";
 #$result = isset($xpath->query($query)) ? $xpath->query($query) : '';
-$result = $xpath->query($query);
+if(preg_match('/^[a-zA-Z0-9]*$/', $query)){//only allow if it's alphanumeric
+    $result = $xpath->query($query);
+}
 }
 ?>
 <div class="thumbnail">
