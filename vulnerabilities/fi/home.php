@@ -31,7 +31,7 @@
                     $f='readme.txt';
                     echo "<a class=\"btn btn-primary\" href=\".?file=$f\" /> Click here </a><br><br>";
 
-                    if (isset($_GET['file'])) {
+                    if (isset($_GET['file']) && $_GET['file']=='readme.txt') {//it should be readme.txt
                         $file=$_GET['file'];
                         include($file);
                     }                 
