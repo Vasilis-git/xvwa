@@ -21,8 +21,9 @@ jection">https://www.owasp.org/index.php/PHP_Object_Injection</a></p></strong>
                         <a class="btn btn-primary" href='?r=a:2:{i:0;s:4:"XVWA";i:1;s:33:"Xtreme Vulnerable Web Application";}' type="submit">CLICK HERE</a>
                     </div>
                         <?php 
+                            /*unused class
                             class PHPObjectInjection{
-                                public $inject;
+                                private $inject;
                                 function __construct(){
 
                                 }
@@ -32,7 +33,7 @@ jection">https://www.owasp.org/index.php/PHP_Object_Injection</a></p></strong>
                                         eval($this->inject);
                                     }
                                 }
-                            }
+                            }*/
                             if(isset($_REQUEST['r'])){  
 
                                 $var1=unserialize($_REQUEST['r']);
